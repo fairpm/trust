@@ -41,7 +41,82 @@ In some cases, optional metadata may be necessary for distribution into or use o
 
 ## The Foundation of Trust: Provenance
 
+Establishing Provenance for each Package is the key component in assigning trust. For package management, Provenance requires verifiable information that establishes its origin and history on its way to the end User. This includes details about where the Package's source code came from, how it was built, and by whom. The goal of establishing Provenance is to ensure that not only has the correct Package been delivered exactly as requested, but to increase the security and trustworthiness of the software supply chains by providing a way to verifiably connect it to its Publisher and Author(s).
 
+In the context of securing the FAIR supply chain, a complete provenance requires verifiable information about
+  1. the Package’s origin;
+  2. how the Package was distributed to the end User; and
+  3. whether the Package has been modified from its canonical source.
 
+This information enables trust to be established in the three areas which are required between the Package source Repository and the end User to establish trust
+  1. in the Publisher;
+  2. in every Node or Entity in the direct supply chain which has or may have the ability to modify, replace, or redirect requests concerning the Package or its metadata; and
+  3. that the downloaded Package is an exact copy of what the Publisher provided, including that it was not corrupted in the download process.
 
+Various solutions or schemas exist for communicating this information, generally pointing toward a specially-formatted Provenance Document included with each Package. The Provenance Document would include specific attestations about the package, its creator(s), and its Publisher which can all be verified by FAIR to help establish trust.
+
+Since the Provenance Document is composed by the Publisher of the Package and forms a part of the signed Package metadata, it cannot be modified before it is received by the Client/Installer, which will also verify the Package's original checksum and signature. The contents of the Provenance Document are also evaluated by the FAIR Trust Labeller and incorporated into a Trust Score for the Package with details concerning how it was calculated. At the time the Package is downloaded, the Client/Installer can record the DIDs for the Aggregator from which the Package was discovered and the Repository from which it was downloaded, together with a timestamp and the Trust Score for each Entity in the specific supply chain at the time the Package is downloaded. This file is to be stored with the installed Package to preserve an audit trail for accountability within FAIR, and may be appended to when the Package is updated.
+
+Valid versions of the Provenance Documebt would need at least one Author or Publisher, but no more than a single Publisher. Multiple Aggregators could exist in theory, but only the Repository from which the package was actually downloaded would be shown, even if it is available in other Repositories or Mirrors.
+
+One possible example of a Provenance record stored by the Installer might be as follows:
+
+```{
+    "build": {
+        “name”: “string”,
+        "version": "1.4.2”,
+        “sourceRepo”: “[source-repo-url]”,
+        "digest": {
+            "sha256": “string”,
+            "sha512": “string”,
+            "gitCommit": “string”,
+        },
+        “dependencies”: {
+            "repository": "[url]",
+            "ref": "refs/heads/main"
+        },
+        "resolvedDependencies": {
+             "uri": "[uri]",
+             "gitCommit": "7fd1a60b01f91b314f59955a4e4d4e80d8edf11d"
+        }
+    },
+    "supplyChain": {
+        "author": {
+            “name”: “string”,
+            “did”: "did:plc:ewvi7nxzyoun6zhxrhs64oiz",
+            “trustScore”: “string”
+        },
+        "publisher": {
+            “name”: “string”,
+            "did:plc:ewvi7nxzyoun6zhxrhs64oiz",
+            “trustScore”: “string”
+        },
+        "package": {
+            “name”: “string”,
+            "did:plc:ewvi7nxzyoun6zhxrhs64oiz",
+            “trustScore”: “string”
+        },
+        "repository": {
+            “name”: “string”,
+            "did:plc:ewvi7nxzyoun6zhxrhs64oiz",
+            “trustScore”: “string”
+        },
+        "aggregator": {
+            “name”: “string”,
+            "did:plc:ewvi7nxzyoun6zhxrhs64oiz",
+            “trustScore”: “string”
+        }
+    }
+    "timestamp": {
+        “committed”: “1449675508”
+        "retrieved": "1755129477"
+    }
+}
+```
+
+Shown in json format, this version of a Provenance Document has three sections. The first is supplied by the Publisher, and records the Package's build details and dependencies. The second is appended by the Installer with data from the Trust Labeller, and records a DID and Trust Score for each Entity in the specific supply chain used to install the Package, including each Entity that would either have the capacity to modify the package or direct a user to an alternate source. The third section records a timestamp for the original Package build or commit from the Publisher and the timestamp for its retrieval for installation, which is added by the Client/Installer.
+
+Provenance is therefore shown from the Package's origin through each connection to the end User, including timestamps, a Git commit ID, and Trust Scores for each entity in the chain at the moment the package is downloaded. This information together establishes accountability. Should a corrupt or malicious Package be received by the end User, the checksum should fail, and the Installer will abort the installation. If a malicious Package is inserted anywhere in the chain, it should similarly fail to install. A Provenance record can still be generated, recording the short list of Entities which will need investigation.
+
+Other examples of Provenance Documents can be found in the [in-toto Attestation Framework](https://github.com/in-toto/attestation) and the [SLSA model](https://slsa.dev/spec/v1.2-rc1/attestation-model), including its [Verification Summary Attestation (VSA)](https://slsa.dev/spec/v1.2-rc1/verification_summary). Appending the supply chain details to the Provenance Document is a FAIR-specific requirement, and it may be advantageous to use an existing standard for the Provenance Document with a separate recording of the intallation audit trail information described above.
 
