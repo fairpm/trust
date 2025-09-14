@@ -39,9 +39,9 @@
     6. Reputation
     7. Human Review
 
-6. Implementation Path
+6. [Implementation Path](implementation-path.md)
 
-    1. Roadmap
-    2. WordPress Trust Inheritance
+    1. Trust Inheritance from the WordPress Repository
+    2. Roadmap
 
 - To Do
