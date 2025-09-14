@@ -1,6 +1,12 @@
 # Establishing Trust Scores
 
-In order to apply the appropriate Trust Label to Packages and Entities in the FAIR network, a range of Trust Signals are checked and monitored for changes which trigger recalculation of the Trust Score and any resulting change to the Trust Label applied.
+> A new device or a new invention stimulates and frequently demands other new devices and inventions for its proper use.
+>
+> &#8212; Mervin J. Kelly, _Bell Telephone Magazine_, Summer 1953
+
+It has always been the case that one new approach will require others in order to successfully achieve its goal. This is the case for the FAIR Protocol in seeking an improved layer of security and trust while adopting a decentralized model of Package distribution. The two objectives appear at odds, but just as the decentralization protocols and labelling systems have _open_ prior art to glean from and extend, we find the same is true for systems of establishing trust, both in Provenance for software Packages, in verifiable identity, and in the statistical analysis of the various trust factors, or Trust Signals. To achieve these ends, the FAIR Protocol will apply and extend the existing work in these areas to the new task of assigning a concretely measureable Trust Score to each Package and specific Entities in the Federated network.
+
+In order to apply the appropriate Trust Label to Packages and Entities in the FAIR network, a range of Trust Signals are checked and monitored for changes which will trigger the recalculation of the Trust Score and any resulting update to the Trust Label applied.
 
 ## Trust Signals
 
@@ -44,36 +50,55 @@ From a numerical Trust Score, the FAIR Labeller may apply the appropriate Trust 
 
 The Trust Score applied is neither permanent nor static. Trust Signals may change, and new ones may become available or cease to be available, and the FAIR Trust Labeller will periodically recalculate Trust Scores and update Trust Labels as appropriate. Over time, Trust Signals within the FAIR network can be augmented to include telemetry and user reports, allowing reputation history to be compiled.
 
-## Trust Scoring for Specific Entities
+## Trust Scoring for Specified Entities
 
-In addition to Trust Scores for Packages, Trust Scores will be calculated and applied to key entities in the FAIR network. Trust Scores for some entities may or may not reflect upon associated Packages. In some cases for example, the Trust Labeller would be able to indicate that while a Package may have a high Trust Score, it is hosted by a Repository with a low Trust Score.
+In addition to Trust Scores for Packages, Trust Scores will be calculated and applied to key entities in the FAIR network. Trust Scores for some Entities may or may not reflect upon associated Packages. In some cases for example, the Trust Labeller would be able to indicate that while a Package may have a high Trust Score, it is hosted by a Repository with a low Trust Score.
 
-Entities for which Trust Scores will be calculated include specific types of nodes within the network and in some cases, may include Publishers or individual Authors and Contributors.
+Entities for which Trust Scores will be calculated include specific types of Nodes within the network and in some cases, may include Publishers or individual Authors and Contributors.
 
 ### FAIR Network Nodes
+
 #### Repositories
+
 Repositories which accept Packages from multiple Publishers to be hosted and distributed on the FAIR network must follow certain guidelines as outlined in the FAIR Protocol. As part of their acceptance for Federation, a Trust Score is assigned.
+
 #### Mini-Repos
-An Author-Publisher may decide to host their own Repository using a platform like the Mini-FAIR Plugin and their choice of hosted Git repository. When a Federated Repository of this type hosts only a single Package or a small number of Packages from the same Publisher or Author, the Repository may be assigned a score based mainly upon the Publisher and the Packages it hosts, rather than upon the same Trust Signals required of other Repositories which accept public submissions.
+
+An Author-Publisher may decide to host their own Repository using a platform like the Mini-FAIR Repo Plugin and their choice of hosted Git repository. When a Federated Repository of this type hosts only a single Package or a small number of Packages from the same Publisher or Author, the Repository may be assigned a score based mainly upon the Publisher and the Packages it hosts, rather than upon the same Trust Signals required of other Repositories which accept public submissions. In these cases, the Trust Scores may be expected to be highly aligned, since share Provenance.
+
+**Note:** In the early stages of Federation, FAIR expects these "Mini-Repos" to be the primary means of distributing Packages, and will begin adding them by invitation only.
+
 #### Mirrors
-Initially, mirrors within FAIR will not have Trust Scores specifically calculated. It is anticipated that requirements for mirroring packages will focus on mirroring the WordPress.org Repository. This is done by FAIR through the AspirePress mirror indexed by AspireCloud to provide a reliable publicly-accessible mirror. This mirror is treated as a special case, with specific practices for both its trust and its security. If other public mirrors are to be Federated in the future, they will require Trust Scores to be calculated based on Trust Signals common to other types of Node as well as mirror-specific Trust Signals to be determined.
 
-Private mirrors have been or may be deployed within a closed network, such as the case where a host maintains its own mirror for efficiency or other reasons. In these situations, the mirror can be assumed to inherit trust from the private or closed network in which it operates. Similarly, an enterprise WordPress deployment may push software updates through its own CI/CD pipeline, which may employ a mirror of selected Packages for its own purposes, and may include custom-developed Packages unique to its deployment. These mirrors and any custom-developed Packages they host will not have Trust Scores calculated or FAIR-assigned Labels.
+Initially, mirrors within FAIR will not have Trust Scores specifically calculated. It is anticipated that requirements for mirroring Packages will focus on mirroring the WordPress.org Repository, which is done by FAIR through the AspirePress mirror indexed by AspireCloud to provide a reliable publicly-accessible mirror. This mirror is initially treated as a special case in achieving technical independence, with specific practices for both its trust and its security. If or when other public mirrors are to be Federated, they will require Trust Scores to be calculated based on Trust Signals common to other types of Node as well as mirror-specific Trust Signals to be determined.
 
-A cache is not considered a mirror, but may be employed by a Repository or Aggregator which is already being assigned a Trust Score. If the cache is private or internal to a network, a Trust Score is not calculated, as the cache exists within a closed system. Similarly, a CDN is not assigned a separate Trust Score. For example, the AspirePress mirror uses Fastly CDN, which is a trusted and accountable entity for this function.
+Private mirrors have already been and may be deployed within a closed network, such as the case where a host maintains its own mirror for efficiency or other reasons. In these situations, the mirror can be assumed to inherit trust from and within the private or closed network in which it operates. Similarly, an enterprise WordPress deployment may specify pushing software updates through its own CI/CD pipeline, which may employ a mirror of selected Packages for its own purposes, and may include custom-developed Packages unique to its deployment (i.e., from a private Repository). These mirrors and any custom-developed Packages they host will not have Trust Scores calculated nor given FAIR-assigned Trust Labels.
+
+A cache is not considered a mirror, but may be employed by a Repository or Aggregator which is already being assigned a Trust Score. If the cache is private or internal to a network, a Trust Score is not calculated, as the cache exists within a closed system. Similarly, a CDN is not assigned a separate Trust Score. For example, the AspirePress mirror uses Fastly CDN, which is a well-known, trusted and accountable third party Entity for this function.
+
 #### Aggregators
+
 Trust Scores for aggregators are calculated using Trust Signals common to other types of Node as well as Trust Signals specific to the Aggregator’s function, including requirements for operating an Aggregator as outlined in the FAIR protocol.
-Third-Party Labellers
-Labelling services offered by third parties may or may not have Trust Scores assigned based on Trust Signals common to other types of Node as well as Trust Signals specific to the function of a Labelling service, to be determined. It is expected that most Labellers providing optional labels will be subscribed to based on known reputation. For example, a malware scanning or security service within the ecosystem could decide to provide labels for packages based on its own security reviews or malware scans. A Trust Score can be determined in the same way as for other Nodes, but most Labellers of this type will rely on existing user or customer relationships and the reputation of its brand.
-Other Entities
+
+### Third-Party Labellers
+
+Labelling services offered by third parties may or may not have Trust Scores assigned based on Trust Signals common to other types of Node, as well as Trust Signals specific to the function of a Labelling service which are yet to be determined. It is expected that most Labellers providing optional labels will be subscribed to based on known reputation, which heavily influence its Trust Score. For example, a malware scanning or security service within the ecosystem could decide to provide labels for packages based on its own security reviews or malware scans. A Trust Score can be determined in the same way as for other Nodes, but most Labellers of this type will rely on existing user or customer relationships and the reputation of its brand.
+
+### Other Entities
+
 #### Publishers
+
 In the FAIR Trust Model, a Publisher holds the copyright for the Package, or a valid license permitting its distribution. The Publisher may also be an Author, or may be an Entity such as a corporation or other organization. If the Publisher is an individual and sole Author, the dual role is recognized by preserving both titles.
 
-Not all Publishers will be assigned a Trust Score separately from the Package they publish. Those who publish many packages (whether by the same or different Authors) may be assigned a Trust Score based upon a specific set of Trust Signals. An example case might be the Publisher of a group of plugins or themes, with or without a financial transaction for the use of the Package. In such cases, a Publisher with numerous Packages having high trust scores may benefit from a simplified approval process for a new Package release based upon its track record with other Packages and its own Trust Score.
+Not all Publishers will be assigned a Trust Score separately from the Package they publish, but those who publish many packages (whether by the same or different Authors) may be assigned a Trust Score based upon a specific set of Trust Signals. An example case might be the Publisher of a group of plugins or themes, with or without a financial transaction for the use of the Package. In such cases, a Publisher with numerous Packages having high trust scores may benefit from a simplified approval process for a new Package release based upon its track record with other Packages and its own Trust Score.
+
 #### Authors & Contributors
-In the FAIR Trust Model, Authors and Contributors are effectively synonymous terms representing the developer(s) of a Package. Within the FAIR Trust Model, if the Package includes third-party software libraries, the Authors and Publishers are not included in any assigned Trust Score.
+
+In the FAIR Trust Model, Authors and Contributors are effectively synonymous terms representing the developer(s) of a Package. Within the FAIR Trust Model, if the Package includes third-party software libraries, the third-party Authors and Publishers are not directly included in an assigned Trust Score for the Package or its Authors. Authors and Contributors will have or build reputation within the ecosystem, but this is not measured (or measurable) as a Trust Score in the near to medium term. On the other hand, Authors and Contributors with verified identities may influence the Trust Score for a Package.
+
 #### Validators
-Bluesky’s trust system, from which much of the FAIR Labelling architecture is derived, includes the ability for some accounts to be trusted to verify others, much like an endorsement. These actions would be a Trust Signal where one individual lends credence to another on the basis of their own reputation. While this concept would be similarly achievable within the FAIR network, it will not form an early part of the Trust Model, pending a more complete set of specifications to address this type of Entity or function. Until then, this function would be served through the mechanism of operating a third-party Labeller.
+
+Bluesky’s trust system, from which much of the FAIR Labelling architecture is derived, includes the ability for some accounts to be trusted to verify others, much like an endorsement. These actions may be seen as a Trust Signal where one individual lends credence to another on the basis of their own reputation. While this concept would be similarly achievable within the FAIR network, it will not form an early part of the Trust Model, pending a more complete set of specifications to address this type of Entity or function. Until then, this function would be served through the mechanism of operating a third-party Labeller.
 
 
 
