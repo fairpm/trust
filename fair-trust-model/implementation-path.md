@@ -10,3 +10,34 @@ An automated process will be introduced for current Publishers to the WordPress 
 
 ## Roadmap
 
+### Current
+
+- Manual Federation of Trusted Repositories by invitation
+- Manual Federation of Trusted Repositories from WordPress.org
+- Supply Chain Threat Analysis
+
+### First Milestone
+
+- AspireBuild Requirements Documentation
+- Implementation of security recommendations for opening Federation
+- Proof-of-concept Package scanning & pass/fail validation
+
+### Second Milestone
+
+- Trust Scoring algorithm applied by Package Scanner
+- AspireBuild[^1] Proof-of-concept
+- Trust Labeller Proof-of-concept
+
+[^1]: AspireBuild design & specification documents to be compiled separately, not related to Trust Scoring. AspireBuild will replace AspireSync to build and update a local mirror with Federated and Legacy WordPress Repository Packages, and be configurable for internal build processes, indexing of private Repositories, and feeding updates to private Aggregators. It is included here because it may have available hooks for validation of Trust Checks.
+
+### Third Milestone
+
+- Trust Labeller fully Federated
+- Trust Scoring includes calculation details with labels
+- Federation requests open to public
+- Federated Trust reporting (issue logging with Trust Score adjustments)
+- Appeals process available for Trust Scoring & Federation requests
+
+
+
+
