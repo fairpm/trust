@@ -50,6 +50,38 @@ From a numerical Trust Score, the FAIR Labeller may apply the appropriate Trust 
 
 The Trust Score applied is neither permanent nor static. Trust Signals may change, and new ones may become available or cease to be available, and the FAIR Trust Labeller will periodically recalculate Trust Scores and update Trust Labels as appropriate. Over time, Trust Signals within the FAIR network can be augmented to include telemetry and user reports, allowing reputation history to be compiled.
 
+### Label Terminology
+
+To simplify the trust message to Users, labels should include text and not be numerical only. This will mean setting a range where the numerical score is translated into brief but meaningful text. The terminology for applying text labels will attempt to avoid implying an "absolute" value except where scores are at extreme ends of the possible values, or where a specific label is applied to override the Trust Score -based label based on a certain condition. Provisionally, the labels applied to Packages might be along these lines:
+
+| Range    | Label          | Indicates                                    |
+| -------- | -------------- | -------------------------------------------- |
+| 98-100%  | Safe           | Very high trust score AND certified trusted by a third-party (e.g., Patchstack) |
+| 80-100%  | Highly Trusted | Trust Score in the top quintile              |
+| 60-79%   | Trusted        | Trust Score in the fourth quintile           |
+| 40-59%   | Basic Trust    | Trust Score in the third quintile            |
+| 20-39%   | Untrusted      | Trust Score in the second quintile           |
+| 0-19%    | Unsafe         | Trust Score in the bottom quintile           |
+| 20-80%   | Partial Trust  | Package Scores in second to fourth quintile, but an Entity in the supply chain is Untrusted |
+| No Score | Unknown        | Not enough data to calculate Trust Score     |
+| No Score | Commercial     | Commercial Package not available for scoring |
+| (Manual) | Known Unsafe   | Package has a known vulnerability            |
+| (Manual) | Malicious      | Package is known to have a malicious payload |
+| (Manual) | Pending        | Package unavailable pending review by FAIR   |
+| (Manual) | Defederated    | Package (or its Repository) Removed by FAIR  |
+| (Manual) | Closed         | Package removed by Publisher                 |
+_Percentages are shown for convenience, and ranges are only samples; actual values to be determined._
+
+An "Unknown" package would not normally be available, but could exist within a private network or closed system. A label of "Pending" might be applied by FAIR when a Package or author is undergoing review for Code of Conduct or guideline violations or other serious complaints while the matter is under review.
+
+Labels must be accessible, with text being the primary indicator. Colours are shown in the example below as a (possible) enhanced view. A user should be able to click on the label to obtain the actual numerical score and how it was calculated, or the reason a particular label may have been applied to override the Trust Score Label.
+
+![trust-label-display inkscape](https://github.com/user-attachments/assets/25c5f796-b5f8-4878-b212-516026cbe0e6)
+
+### Automated Blocking & Allow-Unsafe
+
+The FAIR Independence Client/Installer Plugin could be configured to block Package installations based on preset conditions or thresholds. For example, certain labels might require the user to re-enter their admin password or verify using an MFA token. Alternatively, Packages below a threshold or having certain labels may simply be blocked by default, or enabled through a constant in wp-config. It is noted that valid use cases exist for certain users to install an untrusted or even malicious Package.
+
 ## Trust Scoring for Specified Entities
 
 In addition to Trust Scores for Packages, Trust Scores will be calculated and applied to key entities in the FAIR network. Trust Scores for some Entities may or may not reflect upon associated Packages. In some cases for example, the Trust Labeller would be able to indicate that while a Package may have a high Trust Score, it is hosted by a Repository with a low Trust Score.
