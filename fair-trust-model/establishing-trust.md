@@ -70,6 +70,7 @@ To simplify the trust message to Users, labels should include text and not be nu
 | (Manual) | Pending        | Package unavailable pending review by FAIR   |
 | (Manual) | Defederated    | Package (or its Repository) Removed by FAIR  |
 | (Manual) | Closed         | Package removed by Publisher                 |
+
 _Percentages are shown for convenience, and ranges are only samples; actual values to be determined._
 
 An "Unknown" package would not normally be available, but could exist within a private network or closed system. A label of "Pending" might be applied by FAIR when a Package or author is undergoing review for Code of Conduct or guideline violations or other serious complaints while the matter is under review.
