@@ -1,5 +1,10 @@
 # Sources of Trust Verification
 
+| Document |            |
+| -------- | ---------- |
+| Status   | DRAFT      |
+| Date     | 2025-09-17 |
+
 In order to establish a Trust Score, a review of necessary and available Trust Signals is required, together with an evaluation of potential verification sources. As much as possible, these sources should support automated checks in order to minimize the burden of human review. For each of our cornerstones of trust, we can list potential Trust Signals.
 
 "Always" indicates that the absence of information will impact the Trust Score.
