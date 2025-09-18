@@ -24,7 +24,7 @@ An automated process will be introduced for current Publishers to the WordPress 
 
 ### Second Milestone
 
-- Simplified Trust Scoring algorithm applied by Package Scanner
+- Package Validator proof of concept
 - AspireBuild[^1] Proof-of-concept
 - Trust Labeller Proof-of-concept
 
@@ -32,8 +32,9 @@ An automated process will be introduced for current Publishers to the WordPress 
 
 ### Third Milestone
 
-- Trust Labeller fully Federated
+- Simplified Trust Scoring algorithm applied by Package Scanner
 - Trust Scoring includes calculation details with labels
+- Trust Labeller fully Federated
 
 ### Fourth/Future Milestone(s)
 
@@ -41,6 +42,7 @@ An automated process will be introduced for current Publishers to the WordPress 
 - Federated Trust reporting (issue logging with Trust Score adjustments)
 - Appeals process available for Trust Scoring & Federation requests
 - Bayesian Trust Scoring algorithm
+- AspireBuild in production
 
 
 
