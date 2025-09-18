@@ -1,5 +1,10 @@
 # Implementation Path
 
+| Document |            |
+| -------- | ---------- |
+| Status   | DRAFT      |
+| Date     | 2025-09-17 |
+
 ## Trust Inheritance from WordPress Repository
 
 Packages currently hosted in the official WordPress.org Repository will effectively be grandfathered into the FAIR Trust Model with trust inherited from the evaluation process by which the Package was accepted into the WordPress Repository. The existing metadata available for these Packages is not anticipated to be sufficient to determine a reliable trust score based on the proposed FAIR Trust Model, however this is addressed by the fact that the Package was previously vetted through a process including human review.
