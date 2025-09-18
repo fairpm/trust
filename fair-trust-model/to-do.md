@@ -9,7 +9,7 @@
 
 _What needs to be done to complete & refine the FAIR Trust Model_
 
-- [ ] **Add Provenance Document spec to FAIR Protocol**
+- [ ] Add Provenance Document spec to FAIR Protocol
   - [ ] Review Prior Art, _e.g._ [in-toto Attestation Framework](https://github.com/in-toto/attestation) & [SLSA Verification Summary Attestation (VSA)](https://slsa.dev/spec/v1.2-rc1/verification_summary)
   - [ ] Define Required & Optional Content
   - [ ] Define Data Format
