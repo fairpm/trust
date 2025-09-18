@@ -18,8 +18,8 @@ _What needs to be done to complete & refine the FAIR Trust Model_
 - [ ] Add SBOM (& Dependency?) spec to FAIR Protocol
 - [ ] Build list of required & optional Trust Signals
   - [ ] Review Prior Art, _e.g._ [Open Code Badge Program](https://badges.opencode.de/en/), [Digital ID & Authentication Council of Canada's Trust Framework](https://diacc.ca/trust-framework/)
-  - [ ] Review [WordPress/theme-check/checks](https://github.com/WordPress/theme-check/tree/master/checks), [WordPress/plugin-check](https://github.com/WordPress/plugin-check/tree/trunk), & [WordPress plugin-check Github Action](https://github.com/WordPress/plugin-check-action) for any revisions needed for FAIR
 - [ ] Determine internal checks for automation
+  - [ ] Review [WordPress/theme-check/checks](https://github.com/WordPress/theme-check/tree/master/checks), [WordPress/plugin-check](https://github.com/WordPress/plugin-check/tree/trunk), & [WordPress plugin-check Github Action](https://github.com/WordPress/plugin-check-action) for any revisions needed for FAIR
 - [ ] Determine available external validation methods
 - [ ] Evaluate Verifiable Identity as a strong Trust Signal (also see [Web of Trust Map](https://www.weboftrust.org/topo))
   - [ ] Services: [Identity.com](https://www.identity.com/), [EU Digital Identity Wallet](https://ec.europa.eu/digital-building-blocks/sites/spaces/EUDIGITALIDENTITYWALLET/pages/694487738/EU+Digital+Identity+Wallet+Home), [TrustGrid](https://trustgrid.com/), [Hyperledger Indy](https://www.lfdecentralizedtrust.org/projects/hyperledger-indy), [Northern Block](https://northernblock.io/)
