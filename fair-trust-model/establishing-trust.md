@@ -1,5 +1,10 @@
 # Establishing Trust Scores
 
+| Document |            |
+| -------- | ---------- |
+| Status   | DRAFT      |
+| Date     | 2025-09-17 |
+
 > A new device or a new invention stimulates and frequently demands other new devices and inventions for its proper use.
 >
 > &#8212; Mervin J. Kelly, _Bell Telephone Magazine_, Summer 1953
