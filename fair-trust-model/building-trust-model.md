@@ -19,3 +19,8 @@ In [considering other package management systems](https://github.com/fairpm/fair
 
 FAIR’s current priorities do not include a full-scale evaluation of the criteria for adding Packages to Federated Repositories, and will largely use the existing [WordPress plugin guidelines](https://developer.wordpress.org/plugins/wordpress-org/detailed-plugin-guidelines/), [plugin review handbook](https://make.wordpress.org/plugins/handbook/), and [theme review guidelines](https://developer.wordpress.org/themes/releasing-your-theme/theme-review-guidelines/) as its starting point until such time as the WordPress community is able to provide broad-based feedback concerning any changes it would like to see. While requirements for hosting of Packages in the Federated network will be more stringent, some of the existing rules are expected to become more relaxed in specific areas. For example, FAIR’s roadmap includes allowing paid Packages to be downloadable from Federated Repositories with validated license keys.
 
+## Overview Diagram
+
+As described here, the Trust Model and its implementation takes this general format for creating a Trust Score to use in assigning a Trust Label to a Package based on scripted evaluation of the Package itself (internal) and checks against external verification sources.
+
+<img width="860" height="660" alt="FAIR Packaging Trust drawio" src="https://github.com/user-attachments/assets/b4b244af-44e5-4390-ba31-d42c95eb7177" />
