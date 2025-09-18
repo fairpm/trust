@@ -1,5 +1,10 @@
 # To Do:
 
+| Document |            |
+| -------- | ---------- |
+| Status   | DRAFT      |
+| Date     | 2025-09-17 |
+
 ## Protocol & Spec Changes & Additions
 
 _What needs to be done to complete & refine the FAIR Trust Model_
