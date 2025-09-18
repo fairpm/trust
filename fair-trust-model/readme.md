@@ -5,7 +5,6 @@
 | Status   | DRAFT      |
 | Date     | 2025-09-13 |
 
-
 ## Table of Contents
 
 - [Definitions](definitions.md)
@@ -44,4 +43,4 @@
     1. Trust Inheritance from the WordPress Repository
     2. Roadmap
 
-- To Do
+- [To Do](to-do.md)
