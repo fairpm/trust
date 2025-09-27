@@ -3,7 +3,7 @@
 | Document |            |
 | -------- | ---------- |
 | Status   | DRAFT      |
-| Date     | 2025-09-13 |
+| Date     | 2025-09-27 |
 
 ## Preamble
 
@@ -11,7 +11,7 @@ The [moderation, or labelling specification](https://github.com/fairpm/fair-prot
 
 ## Prior Art
 
-Open Source is famously based upon the concept of “standing on the shoulders of giants,” and the FAIR Trust Model is influenced by other work in broad areas of trust, including where those other efforts may have a different focus. For example, the [SLSA](https://slsa.dev/) addresses individual builds, or Package releases for supply chain threats in four areas: source, build, dependency, and usage. In Germany, the [Open Code Badge Program](http://badges.opencode.de/en/) checks repositories to assign badges based on their rating of specific criteria as a means of building trust in Open Source software. The program examines security, Open Source licensing, software reuse, and maintenance and awards a bronze, silver, or gold badge for each area.
+Open Source is famously based upon the concept of “standing on the shoulders of giants,” and the FAIR Trust Model is influenced by other work in broad areas of trust, including where those other efforts may have a different focus. For example, the [SLSA](https://slsa.dev/) addresses individual builds, or Package releases for supply chain threats in four areas: source, build, dependency, and usage. In Germany, the [Open Code Badge Program](http://badges.opencode.de/en/) checks repositories to assign badges based on their rating of specific criteria as a means of building trust in Open Source software. The program examines security, Open Source licensing, software reuse, and maintenance and awards a bronze, silver, or gold badge for each area. [SymfonyInsight](https://insight.symfony.com/features) highlights risk in certain threat categories based on automated checks. The [OpenSSF Best Practices Badge Program](https://www.bestpractices.dev/en) provides a [list of best practices criteria](https://www.bestpractices.dev/en/criteria/0) specifically for FLOSS projects. Most of the criteria are verified through automated scans, with [three levels of badge](https://github.com/coreinfrastructure/best-practices-badge).
 
 ## Approach
 
