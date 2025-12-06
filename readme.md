@@ -24,12 +24,12 @@ The Trust WG is broadly responsible for refining and implementing [Moderation in
 
 #### Next Steps:
 
-4.1. Begin work on the Trust Scoring algorithm, anticipating ongoing iterative improvements will be made to it.
-4.2. Document procedures for assigning trust labels, including managing and approving requests for federation.
-5.1. Work with the FAIR Forge development team to assist with defining any remaining requirements or updates.
-5.2. Draft a functional specification based on work in 4.1 & 4.2 to extend the Labeller for managing Trust Score Labels.
-6.1. Support further development on the Labeller & Policy Engine proofs-of-concept, which will form a foundation for the Trust Labelling system.
-6.2. Begin & oversee development of the Trust Labeller, including the identified trust-specific requirements and integration with FAIR Forge tooling.
+- 4.1. Begin work on the Trust Scoring algorithm, anticipating ongoing iterative improvements will be made to it.
+- 4.2. Document procedures for assigning trust labels, including managing and approving requests for federation.
+- 5.1. Work with the FAIR Forge development team to assist with defining any remaining requirements or updates.
+- 5.2. Draft a functional specification based on work in 4.1 & 4.2 to extend the Labeller for managing Trust Score Labels.
+- 6.1. Support further development on the Labeller & Policy Engine proofs-of-concept, which will form a foundation for the Trust Labelling system.
+- 6.2. Begin & oversee development of the Trust Labeller, including the identified trust-specific requirements and integration with FAIR Forge tooling.
 
 
 ### Discussion:
